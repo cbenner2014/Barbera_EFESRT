@@ -10,7 +10,8 @@ public class IndexController {
     public String home(Model model) {
         model.addAttribute("pageTitle", "Bienvenido");
         model.addAttribute("pageSubtitle", "Panel de control principal");
-        model.addAttribute("content", "index");
+        model.addAttribute("content", "index :: content");
+
         
         return "layouts/main-layout";
     }
