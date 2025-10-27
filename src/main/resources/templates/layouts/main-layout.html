@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title th:text="${pageTitle} ?: 'Barbería'">Barbería</title>
     
+    <!-- Tailwind CSS -->
     <link th:href="@{/css/tailwind-output.css}" rel="stylesheet">
-      
+    
+    <!-- FontAwesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     
     <style>
+        /* Sidebar items */
         .sidebar-item {
             display: flex;
             align-items: center;
-            padding-left: 1rem;
-            padding-right: 1rem;
-            padding-top: 0.75rem;
-            padding-bottom: 0.75rem;
+            padding: 0.75rem 1rem;
             color: rgba(74, 74, 74, 0.8);
             border-radius: 0.5rem;
             transition: all 0.2s ease-in-out;
@@ -38,15 +38,15 @@
         <div th:replace="~{layouts/sidebar :: sidebar}"></div>
         
         <!-- Contenido Dinámico -->
-        <main class="flex-1">
-            <!-- Header (opcional, también puede ser persistente) -->
+        <main class="flex-1 flex flex-col">
+            <!-- Header -->
             <header class="bg-white shadow-sm border-b p-6">
                 <h1 class="font-sans text-2xl font-bold" th:text="${pageTitle} ?: 'Dashboard'"></h1>
                 <p class="text-[#4a4a4a]/60 font-sans" th:text="${pageSubtitle} ?: 'Sistema de gestión'"></p>
             </header>
             
-            <!-- Aquí se inserta el contenido específico de cada página -->
-            <div class="p-6">
+            <!-- Contenido específico de cada página -->
+            <div class="flex-1 p-6">
                 <div th:replace="~{${content}}"></div>
             </div>
         </main>
