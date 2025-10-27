@@ -11,8 +11,6 @@ public class IndexController {
         model.addAttribute("pageTitle", "Bienvenido");
         model.addAttribute("pageSubtitle", "Panel de control principal");
         model.addAttribute("content", "index :: content");
-
-        
         return "layouts/main-layout";
     }
 }
